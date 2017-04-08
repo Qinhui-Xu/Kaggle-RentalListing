@@ -22,15 +22,15 @@ t2 <- data.table(bathrooms=unlist(t1$bathrooms)
                  ,n_photos = as.numeric(sapply(t1$photos, length))
                  ,n_description = as.numeric(sapply(t1$description, nchar))
                  ,n_features = as.numeric(sapply(t1$features, length))
-                 ,description=unlist(t1$description) # parse errors
-                 ,display_address=unlist(t1$display_address) # parse errors
+                 #,description=unlist(t1$description) # parse errors
+                # ,display_address=unlist(t1$display_address) # parse errors
                  ,latitude=unlist(t1$latitude)
                  ,longitude=unlist(t1$longitude)
                  ,listing_id=unlist(t1$listing_id)
                  ,manager_id=as.factor(unlist(t1$manager_id))
                  ,price=unlist(t1$price)
                  ,interest_level=as.factor(unlist(t1$interest_level))
-                 ,street_adress=unlist(t1$street_address) # parse errors
+                 #,street_adress=unlist(t1$street_address) # parse errors
 )
 
 t2[,":="(yday=yday(created)
@@ -48,7 +48,7 @@ t2_exp_feat = t(sapply(t1$features,
                          as.numeric(top_features %in% x)
                        }))
 t2 = cbind(t2, t2_exp_feat)
-write.csv(t2, file = "train.csv",row.names=FALSE, na="")
+write.csv(t2, file = "train_datahandle.csv",row.names=FALSE, na="")
 
 s1 <- test
 # There has to be a better way to do this while getting repeated rows for the "feature" and "photos" columns
