@@ -22,15 +22,15 @@ t2 <- data.table(bathrooms=unlist(t1$bathrooms)
                  ,n_photos = as.numeric(sapply(t1$photos, length))
                  ,n_description = as.numeric(sapply(t1$description, nchar))
                  ,n_features = as.numeric(sapply(t1$features, length))
-                 # ,description=unlist(t1$description) # parse errors
-                 # ,display_address=unlist(t1$display_address) # parse errors
+                 ,description=unlist(t1$description) # parse errors
+                 ,display_address=unlist(t1$display_address) # parse errors
                  ,latitude=unlist(t1$latitude)
                  ,longitude=unlist(t1$longitude)
                  ,listing_id=unlist(t1$listing_id)
                  ,manager_id=as.factor(unlist(t1$manager_id))
                  ,price=unlist(t1$price)
                  ,interest_level=as.factor(unlist(t1$interest_level))
-                 # ,street_adress=unlist(t1$street_address) # parse errors
+                 ,street_adress=unlist(t1$street_address) # parse errors
 )
 
 t2[,":="(yday=yday(created)
@@ -59,14 +59,14 @@ s2 <- data.table(bathrooms=unlist(s1$bathrooms)
                  ,n_photos = as.numeric(sapply(s1$photos, length))
                  ,n_description = as.numeric(sapply(s1$description, nchar))
                  ,n_features = as.numeric(sapply(s1$features, length))
-                 # ,description=unlist(s1$description) # parse errors
-                 # ,display_address=unlist(s1$display_address) # parse errors
+                  ,description=unlist(s1$description) # parse errors
+                  ,display_address=unlist(s1$display_address) # parse errors
                  ,latitude=unlist(s1$latitude)
                  ,longitude=unlist(s1$longitude)
                  ,listing_id=unlist(s1$listing_id)
                  ,manager_id=as.factor(unlist(s1$manager_id))
                  ,price=unlist(s1$price)
-                 # ,street_adress=unlist(s1$street_address) # parse errors
+                  ,street_adress=unlist(s1$street_address) # parse errors
 )
 s2[,":="(yday=yday(created)
          ,month=month(created)

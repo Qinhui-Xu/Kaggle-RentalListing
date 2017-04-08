@@ -3,9 +3,7 @@ h2o.init(nthreads = -1, max_mem_size="6g")
 train = read.csv("/Users/apple1/Desktop/kaggle/RentalListing/train.csv")
 train <- as.h2o(train, destination_frame = "train.hex")
 varnames <- setdiff(colnames(train), "interest_level")
-#ratios add up to less than 1?
-#how to parse data using R in h2o?
-split = h2o.splitFrame(train, ratios = c(0.7, 0.29))
+split = h2o.splitFrame(train, ratios = c(0.7))
 traindata <- split[[1]]
 validationdata <- split[[2]]
 
@@ -16,7 +14,7 @@ gbm1 <- h2o.gbm(x = varnames
                 ,distribution = "multinomial"
                 ,model_id = "gbm1"
                 #,nfolds = 5
-                ,ntrees = 200
+                ,ntrees = 300
                 ,learn_rate = 0.01
                 ,max_depth = 7
                 ,min_rows = 20
