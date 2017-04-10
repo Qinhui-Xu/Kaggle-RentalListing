@@ -7,7 +7,7 @@ library(lubridate)
 h2o.init(nthreads = -1, max_mem_size="8g")
 
 # Load data
-t1 <- fromJSON("../input/train.json")
+t1 <- fromJSON("../Desktop/kaggle/RentalListing/train.json")
 # There has to be a better way to do this while getting repeated rows for the "feature" and "photos" columns
 t2 <- data.table(bathrooms=unlist(t1$bathrooms)
                  ,bedrooms=unlist(t1$bedrooms)
