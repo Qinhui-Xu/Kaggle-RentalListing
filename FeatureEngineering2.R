@@ -29,7 +29,7 @@ colnames(extraction_feature) <- top_features
 sent_df = cbind(sent_df, extraction_feature)
 sent_df <- subset(sent_df, select = -c(features) )
 head(sent_df)
-x <- toJSON(sent_df)
-write(x, "train_feature_sent.json")
+#x <- toJSON(sent_df)
+#write(x, "train_feature_sent.json")
 
 #####Log the price to standarlize price variable
