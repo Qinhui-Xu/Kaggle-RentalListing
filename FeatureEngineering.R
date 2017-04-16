@@ -1,5 +1,5 @@
 library(data.table)
-df_train <- read.csv(file="~/Desktop/kaggle/RentalListing/Kaggle-RentalListing/df_train.csv")
+df_train <- read.csv(file="Users/apple1/Desktop/kaggle/RentalListing/Kaggle-RentalListing/df_train.csv")
 data.table(head(df_train))
 names(df_train)
 
