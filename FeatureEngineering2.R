@@ -205,7 +205,7 @@ dval = xgb.DMatrix(as.matrix(x_val), label=y_val)
 #perform training
 gbdt = xgb.train(params = xgb_params,
                  data = dtrain,
-                 nrounds =888,
+                 nrounds =1800,
                  watchlist = list(train = dtrain, val=dval),
                  print_every_n = 25,
                  early_stopping_rounds=50)
