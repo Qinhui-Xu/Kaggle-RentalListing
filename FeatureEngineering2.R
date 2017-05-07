@@ -28,7 +28,7 @@ sentiment <- subset(sentiment, select = c(negative,positive,id))
 sent_df<-merge(train_df,sentiment, by.x="id", by.y="id", all.x=T, all.y=T)
 
 #####Deal with Feature Variable
-train <- fromJSON("~/Desktop/kaggle/RentalListing/train.json")
+train <- fromJSON("Users/apple1/Desktop/kaggle/RentalListing/train.json")
 frq_features = table(unlist(train$features))
 top_features = names(frq_features[frq_features>8888])
 extraction_feature = t(sapply(sent_df$features,
